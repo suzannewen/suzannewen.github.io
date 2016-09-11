@@ -11,8 +11,9 @@
   <body>
 
     <!-- homepage -->
+    
     <body>
-    <section class="hero">
+    <section class="hero" id="heroImg">
       <div class="row">
         <div class="small-3 columns">
           <a href="https://www.flickr.com/photos/95965677@N06/" class="icon-button flickr">
@@ -28,18 +29,40 @@
       </div>
     
       <div class="row intro">
-        <div class="small-6 small-centered columns">
-          <h1 style="font-size: 95px; text-align: center">suzanne wen</h1>
+        <div class="small-12 small-centered columns">
+          <h1>suzanne wen</h1>
         </div>
     
-        <div class="row small-collapse">
-          <a href="blog.html"><p style="font-size: 24px; text-align: right" class="small-6 columns">PERSONAL BLOG</p></a>
-          <p style="font-size: 24px; text-align: center" class="small-1 columns">|</p>
-          <a href="assets/components/suzannewen_resume.pdf"><p style="font-size: 24px; text-align: left" class="small-5 columns">RESUME</p>
+        <div class="row nav">
+          <div class="small-12 small-centered columns">
+            <a href="blog.html" style="color: white;">PERSONAL BLOG</a> | <a href="assets/components/suzannewen_resume.pdf" style="color: white">RESUME</a>
         </div>
       </div>
     </section>
     </body>
+    
+    <script>
+    var index = 0;
+    
+    window.onload = function () {
+      var imgArray = [
+      "assets/img/heroSuz.jpg",
+      "assets/img/muir.jpg",
+      "assets/img/buffalo.jpg",
+      "assets/img/SF.jpg"];
+    
+      setInterval(function () { // rotates through 4 pictures
+        document.getElementById("heroImg").style.background = "url(" + imgArray[index] + ") no-repeat center center";
+        document.getElementById("heroImg").style.backgroundSize = "cover";
+        document.getElementById("heroImg").style.height = "100vh";
+        index ++;
+        if (index === 4) {
+          index = 0;
+        }
+      }, 4000)
+      
+    };
+    </script>
     
 
     <script src="assets/js/app.js"></script>
